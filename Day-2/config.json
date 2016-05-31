@@ -1,0 +1,6 @@
+{"input":"js/*.js",
+ "txt":"*.txt",
+ "uglifypath":"dist/app.min.js",
+ "concatpath":"dist/built.js",
+ "csspath":"css/*.css"
+}
