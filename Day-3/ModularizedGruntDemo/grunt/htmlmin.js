@@ -1,0 +1,13 @@
+module.exports={
+    htmlmin:{
+        dist:{
+            options:{
+                removeComments:true,
+                collapseWhiteSpace:true
+            },
+            files:{
+                'dist/index.html':'views/index.html'
+            }
+        }
+    }
+}
