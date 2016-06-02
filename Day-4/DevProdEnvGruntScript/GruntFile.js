@@ -1,0 +1,39 @@
+module.exports = function(grunt){
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.initConfig({
+        pkg:grunt.file.readJSON('package.json'),
+        uglify:{
+            dev:{
+                files:{
+                    'dist/js/dev.min.js':['js/**/*.js']
+                }
+            },
+            production:{
+                files:{
+                    'dist/js/production.min.js':['js/**/*.js']
+                }
+            }
+        },
+        cssmin:{
+            options:{
+                shorthandCompacting:false,
+                roundingPrecision:-1
+            },
+            dev:{
+                files:{
+                    'dev.css':['css/*.css']
+                }
+            },
+            production:{
+                files:{
+                    'production.css':['css/*.css']
+                }
+            }
+        }
+    });
+    // Here this will work for Dev and Production
+    //grunt.registerTask('default',['uglify','cssmin']);
+    //grunt.registerTask('dev',['uglify:dev','cssmin:dev']);
+    grunt.registerTask('production',['uglify:production','cssmin:production']);
+}
