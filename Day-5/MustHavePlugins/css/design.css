@@ -1,0 +1,4 @@
+div{
+    background: linear-gradient(red,green);
+    column-count:3;
+}
